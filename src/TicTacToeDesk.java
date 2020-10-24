@@ -26,7 +26,7 @@ public class TicTacToeDesk {
 
     private boolean isFreeCell(int x, int y) throws TicTacToeException {
         boolean isFree = false;
-        if (!(0 <= x && x <= deskSize && 0 <= y && y <= deskSize)) {
+        if (!(0 <= x && x <= deskSize - 1 && 0 <= y && y <= deskSize - 1)) {
             throw new TicTacToeException("There is no cell with coordinates:(" + x + "," + y + ").");
         }
         if (cells[x][y] == 0) {
