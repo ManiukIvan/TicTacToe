@@ -1,16 +1,10 @@
-import java.util.InputMismatchException;
-import java.util.Random;
-import java.util.Scanner;
-
-import static java.lang.Math.random;
-import static java.lang.Math.sqrt;
-
 public class TicTacToe {
 
     private TicTacToeDesk desk;
     private TicTacToePlayer player1;
     private TicTacToePlayer player2;
-    public TicTacToe(int deskSize){
+
+    public TicTacToe(int deskSize) {
         desk = new TicTacToeDesk(deskSize);
         player1 = new TicTacToePlayer(1);
         player2 = new TicTacToePlayer(2);
@@ -20,17 +14,17 @@ public class TicTacToe {
     public void startGame() {
         while (desk.isFreeCells()) {
             desk.showDesk();
-            System.out.println(player1.toString()+":");
+            System.out.println(player1.toString() + ":");
             player1.makeMove(desk);
-            if (desk.isWinner()){
+            if (desk.isWinner()) {
                 endGame(player1);
                 break;
             }
 
             desk.showDesk();
-            System.out.println(player1.toString()+":");
+            System.out.println(player1.toString() + ":");
             player2.makeMove(desk);
-            if (desk.isWinner()){
+            if (desk.isWinner()) {
                 endGame(player2);
                 break;
             }
@@ -40,10 +34,9 @@ public class TicTacToe {
     }
 
     public void endGame(TicTacToePlayer winner) {
-        if (winner !=null) {
+        if (winner != null) {
             System.out.println("Winner is " + player1.toString());
-        }
-        else {
+        } else {
             System.out.println("There is no winner, all cells are filled.");
         }
     }
