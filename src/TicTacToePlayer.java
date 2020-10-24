@@ -2,21 +2,22 @@ import javafx.util.Pair;
 
 import java.util.Scanner;
 
-public class TicTacToePlayer {
+public class TicTacToePlayer extends Player {
     private Scanner in;
-    private int playerNumber;
 
     public TicTacToePlayer(int playerNumber) {
-        this.playerNumber = playerNumber;
+        this.number = playerNumber;
         in = new Scanner(System.in);
     }
 
+
+    @Override
     public void makeMove(TicTacToeDesk desk) {
         boolean isMadeMove = false;
         while (!isMadeMove) {
             Pair<Integer, Integer> xy = chooseCell();
             try {
-                desk.fillCell(xy.getKey(), xy.getValue(), playerNumber);
+                desk.fillCell(xy.getKey(), xy.getValue(), number);
                 isMadeMove = true;
             } catch (TicTacToeException e) {
                 System.out.println(e.getMessage());
@@ -24,7 +25,7 @@ public class TicTacToePlayer {
         }
     }
 
-    private Pair<Integer, Integer> chooseCell() {
+    public Pair<Integer, Integer> chooseCell() {
         int x = -1;
         int y = -1;
         while (x == -1 && y == -1) {
@@ -44,6 +45,6 @@ public class TicTacToePlayer {
 
     @Override
     public String toString() {
-        return "Player " + playerNumber;
+        return "Player " + number;
     }
 }
