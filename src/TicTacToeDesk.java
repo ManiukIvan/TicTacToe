@@ -90,8 +90,8 @@ public class TicTacToeDesk {
             }
         }
         //check tht not null
-        if (isDiagonalWithEqualCells && cells[0][0]==0){
-            isDiagonalWithEqualCells =false;
+        if (isDiagonalWithEqualCells && cells[0][0] == 0) {
+            isDiagonalWithEqualCells = false;
         }
         if (!isDiagonalWithEqualCells) {
             //check second
@@ -103,19 +103,20 @@ public class TicTacToeDesk {
             }
         }
         //check tht not null
-        if (isDiagonalWithEqualCells && cells[deskSize-1][0]==0){
-            isDiagonalWithEqualCells =false;
+        if (isDiagonalWithEqualCells && cells[deskSize - 1][0] == 0) {
+            isDiagonalWithEqualCells = false;
         }
         return isDiagonalWithEqualCells;
     }
 
-    public boolean isWinner(){
+    public boolean isWinner() {
         boolean isWinner = false;
-        if (isNotNullColumnsWithEqualCells() || isNotNullRowsWithEqualCells() || isNotNullDiagonalWithEqualCells()){
+        if (isNotNullColumnsWithEqualCells() || isNotNullRowsWithEqualCells() || isNotNullDiagonalWithEqualCells()) {
             isWinner = true;
         }
-        return  isWinner;
+        return isWinner;
     }
+
     public void showDesk() {
         for (int i = 0; i < deskSize; i++) {
             for (int j = 0; j < deskSize; j++) {

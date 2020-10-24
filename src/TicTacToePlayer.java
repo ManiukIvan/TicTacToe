@@ -1,6 +1,5 @@
 import javafx.util.Pair;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TicTacToePlayer {
@@ -45,6 +44,6 @@ public class TicTacToePlayer {
 
     @Override
     public String toString() {
-        return "Player "+playerNumber;
+        return "Player " + playerNumber;
     }
 }
