@@ -15,8 +15,8 @@ public class TicTacToeComputerPlayer extends Player {
     public void makeMove(TicTacToeDesk desk) {
         boolean isMadeMove = false;
         while (!isMadeMove) {
-            int x = (int) (random()*desk.getDeskSize());
-            int y = (int) (random()*desk.getDeskSize());
+            int x = (int) (random() * desk.getDeskSize());
+            int y = (int) (random() * desk.getDeskSize());
             try {
                 desk.fillCell(x, y, number);
                 isMadeMove = true;
@@ -27,6 +27,6 @@ public class TicTacToeComputerPlayer extends Player {
 
     @Override
     public String toString() {
-        return "Computer "+ number;
+        return "Computer " + number;
     }
 }

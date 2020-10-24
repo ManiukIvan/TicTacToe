@@ -20,12 +20,12 @@ public class TicTacToe {
         desk = new TicTacToeDesk(deskSize);
         chooseGameMode();
         player1 = new TicTacToePlayer(1);
-        switch (gameMode){
+        switch (gameMode) {
             case PlayerVsPlayer:
-                player2 =new TicTacToePlayer(2);
+                player2 = new TicTacToePlayer(2);
                 break;
             case PlayerVsComputer:
-                player2 =new TicTacToeComputerPlayer(2);
+                player2 = new TicTacToeComputerPlayer(2);
                 break;
         }
         computer = new TicTacToeComputerPlayer(3);
