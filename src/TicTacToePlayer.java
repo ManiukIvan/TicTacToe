@@ -34,15 +34,15 @@ public class TicTacToePlayer extends Player {
                 x = Integer.parseInt(in.next());
                 System.out.println("Enter y:");
                 y = Integer.parseInt(in.next());
-                if (!(0 <= x && x <=deskSize  && 0 <= y && y <= deskSize)) {
+                if (!(0 <= x && x <=deskSize-1  && 0 <= y && y <= deskSize-1)) {
                     throw new TicTacToeException("There is no cell with coordinates:(" + x + "," + y + ").");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Enter integer value");
+                x = -1;
+                y = -1;
             } catch (TicTacToeException e) {
                 System.out.println(e.getMessage());
-            }
-            finally {
                 x = -1;
                 y = -1;
             }
