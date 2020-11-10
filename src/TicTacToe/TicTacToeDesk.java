@@ -1,3 +1,5 @@
+package TicTacToe;
+
 public class TicTacToeDesk {
     private final int deskSize;
     private int[][] cells;

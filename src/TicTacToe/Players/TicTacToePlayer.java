@@ -1,3 +1,6 @@
+package TicTacToe.Players;
+
+import TicTacToe.TicTacToeException;
 import javafx.util.Pair;
 
 import java.util.Scanner;
@@ -52,6 +55,6 @@ public class TicTacToePlayer extends Player {
 
     @Override
     public String toString() {
-        return "Player " + playerNumber;
+        return "TicTacToe.TicTacToe.Players.Player " + playerNumber;
     }
 }

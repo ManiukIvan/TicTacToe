@@ -1,3 +1,5 @@
+package TicTacToe;
+
 import java.io.IOException;
 
 public class TicTacToeException extends IOException {

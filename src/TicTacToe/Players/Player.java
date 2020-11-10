@@ -1,4 +1,6 @@
-import javafx.util.Pair;
+package TicTacToe.Players;
+
+import TicTacToe.TicTacToeDesk;
 
 public abstract class Player {
     protected int playerNumber;

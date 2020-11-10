@@ -1,6 +1,4 @@
-import javafx.util.Pair;
-
-import java.util.Scanner;
+package TicTacToe.Players;
 
 import static java.lang.Math.random;
 

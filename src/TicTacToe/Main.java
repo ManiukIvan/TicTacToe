@@ -1,3 +1,4 @@
+package TicTacToe;
 
 public class Main {
     private final static int deskSize = 3;

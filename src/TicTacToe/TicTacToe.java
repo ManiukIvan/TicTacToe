@@ -1,5 +1,9 @@
-import java.util.InputMismatchException;
-import java.util.NoSuchElementException;
+package TicTacToe;
+
+import TicTacToe.Players.Player;
+import TicTacToe.Players.TicTacToeComputerPlayer;
+import TicTacToe.Players.TicTacToePlayer;
+
 import java.util.Scanner;
 
 
@@ -54,8 +58,8 @@ public class TicTacToe {
     }
     public void chooseGameMode() {
         System.out.println("Please Chose game mode:\n" +
-                "1 - Player vs Player\n" +
-                "2 - Player vs Computer\n");
+                "1 - TicTacToe.TicTacToe.Players.Player vs TicTacToe.TicTacToe.Players.Player\n" +
+                "2 - TicTacToe.TicTacToe.Players.Player vs Computer\n");
         Scanner in = new Scanner(System.in);
         while (gameMode == null) {
             try {
