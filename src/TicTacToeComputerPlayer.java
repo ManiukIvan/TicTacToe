@@ -7,26 +7,25 @@ import static java.lang.Math.random;
 public class TicTacToeComputerPlayer extends Player {
 
     public TicTacToeComputerPlayer(int computerNumber) {
-        this.number = computerNumber;
+        this.playerNumber = computerNumber;
     }
 
 
     @Override
     public void makeMove(TicTacToeDesk desk) {
-        boolean isMadeMove = false;
-        while (!isMadeMove) {
+        boolean moveIsNotMade = true;
+        do {
             int x = (int) (random() * desk.getDeskSize());
             int y = (int) (random() * desk.getDeskSize());
-            try {
-                desk.fillCell(x, y, number);
-                isMadeMove = true;
-            } catch (TicTacToeException e) {
+            if (desk.isFreeCell(x,y)) {
+                desk.fillCell(x, y, playerNumber);
+                moveIsNotMade = false;
             }
-        }
+        } while (moveIsNotMade);
     }
 
     @Override
     public String toString() {
-        return "Computer " + number;
+        return "Computer " + playerNumber;
     }
 }
