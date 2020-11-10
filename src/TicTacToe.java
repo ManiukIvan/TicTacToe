@@ -11,51 +11,47 @@ public class TicTacToe {
     }
 
     private TicTacToeDesk desk;
-    private Player player1;
-    private Player player2;
-    private Player computer;
+    private Player firstPlayer;
+    private Player secondPlayer;
     private GameMode gameMode;
 
     public TicTacToe(int deskSize) {
         desk = new TicTacToeDesk(deskSize);
         chooseGameMode();
-        player1 = new TicTacToePlayer(1);
+        firstPlayer = new TicTacToePlayer(1);
         switch (gameMode) {
             case PlayerVsPlayer:
-                player2 = new TicTacToePlayer(2);
+                secondPlayer = new TicTacToePlayer(2);
                 break;
             case PlayerVsComputer:
-                player2 = new TicTacToeComputerPlayer(2);
+                secondPlayer = new TicTacToeComputerPlayer(2);
                 break;
         }
-        computer = new TicTacToeComputerPlayer(3);
-
     }
 
     public void startGame() {
-        while (desk.isFreeCells()) {
-            desk.showDesk();
-            System.out.println(player1.toString() + ":");
-            player1.makeMove(desk);
-            if (desk.isWinner()) {
-                desk.showDesk();
-                endGame(player1);
-                return;
+        Player winner = null;
+        do {
+            makePlayerMove(firstPlayer);
+            if (desk.isWinner()){
+                winner = firstPlayer;
+                break;
             }
-
-            desk.showDesk();
-            System.out.println(player2.toString() + ":");
-            player2.makeMove(desk);
-            if (desk.isWinner()) {
-                desk.showDesk();
-                endGame(player2);
-                return;
+            makePlayerMove(secondPlayer);
+            if (desk.isWinner()){
+                winner = secondPlayer;
+                break;
             }
-        }
-        endGame(null);
+        } while (desk.isFreeCells());
+        endGame(winner);
 
     }
 
+    public void makePlayerMove(Player player){
+        desk.showDesk();
+        System.out.println(player.toString() + ":");
+        player.makeMove(desk);
+    }
     public void chooseGameMode() {
         System.out.println("Please Chose game mode:\n" +
                 "1 - Player vs Player\n" +
