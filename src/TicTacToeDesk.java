@@ -11,24 +11,12 @@ public class TicTacToeDesk {
         return deskSize;
     }
 
-    public void fillCell(int x, int y, int cellValue) throws TicTacToeException {
-        if (!(0 <= x && x <= deskSize && 0 <= y && y <= deskSize)) {
-            throw new TicTacToeException("There is no cell with coordinates:(" + x + "," + y + ").");
-        }
-        if (isFreeCell(x, y)) {
-            cells[x][y] = cellValue;
-
-        } else {
-            throw new TicTacToeException("Cell with coordinates (" + x + "," + y + ") is already filled");
-        }
-
+    public void fillCell(int x, int y, int cellValue){
+        cells[x][y] = cellValue;
     }
 
-    private boolean isFreeCell(int x, int y) throws TicTacToeException {
+    public boolean isFreeCell(int x, int y) {
         boolean isFree = false;
-        if (!(0 <= x && x <= deskSize - 1 && 0 <= y && y <= deskSize - 1)) {
-            throw new TicTacToeException("There is no cell with coordinates:(" + x + "," + y + ").");
-        }
         if (cells[x][y] == 0) {
             isFree = true;
         }
@@ -110,11 +98,7 @@ public class TicTacToeDesk {
     }
 
     public boolean isWinner() {
-        boolean isWinner = false;
-        if (isNotNullColumnsWithEqualCells() || isNotNullRowsWithEqualCells() || isNotNullDiagonalWithEqualCells()) {
-            isWinner = true;
-        }
-        return isWinner;
+        return isNotNullColumnsWithEqualCells() || isNotNullRowsWithEqualCells() || isNotNullDiagonalWithEqualCells();
     }
 
     public void showDesk() {
